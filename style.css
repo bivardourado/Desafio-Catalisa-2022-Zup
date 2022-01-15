@@ -8,7 +8,13 @@ body {
 main {
     align-items: center;
     display: flex;
-    height: 250vh;
+    height: 200vh;
     justify-content: center;
     position: relative;
+}
+
+main>section img {
+    height: 300px;
+    margin: 15px 0;
+    width: 300px;
 }
