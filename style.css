@@ -8,15 +8,16 @@
          main {
              align-items: center;
              display: flex;
-             height: 200vh;
+             font-family: Verdana, Geneva, Tahoma, sans-serif;
+             font-size: 12px;
+             height: 800px;
              justify-content: center;
              position: relative;
          }
          
          main>section img {
-             height: 300px;
-             margin: 15px 0;
-             width: 300px;
+             height: 150px;
+             width: 150px;
          }
          
          main>section button {
