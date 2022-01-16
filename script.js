@@ -32,4 +32,22 @@ gerarValorAletorio = () => {
 pegarPersonagem = () => {
         let numeroAleatorio = gerarValorAletorio();
         let numeroAleatorio2 = gerarValorAletorio();
-        let numeroAleatorio3 = gerarValorAletorio();
+
+        traduzirCondicao = (data) => {
+            if (data.status == 'unknown') {
+                return 'Não sabemos';
+            } else if (data.status == 'Alive') {
+                return 'Sim';
+            } else {
+                return 'Não. Está morto';
+            }
+        }
+
+        gerarValorAletorio = () => {
+            return Math.floor(Math.random() * 671);
+        }
+
+        pegarPersonagem = () => {
+                let numeroAleatorio = gerarValorAletorio();
+                let numeroAleatorio2 = gerarValorAletorio();
+                let numeroAleatorio3 = gerarValorAletorio();
