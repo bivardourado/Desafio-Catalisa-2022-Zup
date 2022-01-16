@@ -16,7 +16,7 @@ main {
     display: flex;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
-    height: 800px;
+    height: 1000px;
     justify-content: center;
     position: relative;
 }
