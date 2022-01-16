@@ -30,24 +30,48 @@ gerarValorAletorio = () => {
 }
 
 pegarPersonagem = () => {
-        let numeroAleatorio = gerarValorAletorio();
-        let numeroAleatorio2 = gerarValorAletorio();
-
-        traduzirCondicao = (data) => {
-            if (data.status == 'unknown') {
-                return 'Não sabemos';
-            } else if (data.status == 'Alive') {
-                return 'Sim';
-            } else {
-                return 'Não. Está morto';
-            }
+    let numeroAleatorio = gerarValorAletorio();
+    let numeroAleatorio2 = gerarValorAletorio();
+    let numeroAleatorio3 = gerarValorAletorio();
+    fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio}`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            "Content-type": 'application/json'
         }
-
-        gerarValorAletorio = () => {
-            return Math.floor(Math.random() * 671);
+    }).then((response) => response.json()).then((data) => {
+        imagem.src = data.image;
+        imagem.alt = data.name;
+        nome.innerHTML = data.name;
+        especie.innerHTML = data.species;
+        condicao.innerHTML = traduzirCondicao(data);
+    })
+    fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio2}`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            "Content-type": 'application/json'
         }
+    }).then((response) => response.json()).then((data) => {
+        imagem2.src = data.image;
+        imagem.alt = data.name;
+        nome2.innerHTML = data.name;
+        especie2.innerHTML = data.species;
+        condicao2.innerHTML = traduzirCondicao(data);
+    })
+    fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio3}`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            "Content-type": 'application/json'
+        }
+    }).then((response) => response.json()).then((data) => {
+        imagem3.src = data.image;
+        imagem.alt = data.name;
+        nome3.innerHTML = data.name;
+        especie3.innerHTML = data.species;
+        condicao3.innerHTML = traduzirCondicao(data);
+    });
+}
 
-        pegarPersonagem = () => {
-                let numeroAleatorio = gerarValorAletorio();
-                let numeroAleatorio2 = gerarValorAletorio();
-                let numeroAleatorio3 = gerarValorAletorio();
+botao.onclick = pegarPersonagem;
